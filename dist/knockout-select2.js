@@ -46,12 +46,12 @@
             if (ko.isObservable(allBindings.value)) {
                 allBindings.value.subscribe(function (value) {
                     if (ignoreChange) return;
-                    triggerChangeQuietly(element, this._target || this.target);
+                    triggerChangeQuietly(element, allBindings.value);
                 });
             } else if (ko.isObservable(allBindings.selectedOptions)) {               
                 allBindings.selectedOptions.subscribe(function (value) { 
                     if (ignoreChange) return;
-                    triggerChangeQuietly(element, this._target || this.target);
+                    triggerChangeQuietly(element, allBindings.selectedOptions);
                 });
             }
             
